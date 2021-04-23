@@ -1,5 +1,10 @@
 #! /bin/bash
-sudo systemd-resolve --interface enx00249b314a58 --set-dns 8.8.8.8
+source config.txt
+
+echo "Interfece: $interface"
+echo "DNS: $dns"
+
+sudo systemd-resolve --interface "$interface" --set-dns "$dns"
 systemd-resolve --status
 
 #sudo nano /etc/resolv.conf
